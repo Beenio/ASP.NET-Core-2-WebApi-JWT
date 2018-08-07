@@ -34,7 +34,13 @@ namespace JWTExample
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name:"DefaultApi",
+                    template:"api/{controller}"
+                );
+            });
         }
     }
 }
